@@ -16,7 +16,7 @@
       font-family: Verdana, Arial, sans-serif;
       font-size: 16px;
     }
-    #editor{
+    .editor{
       background-color: #1d2025;
       height: 750px;
       max-height: 90%;
@@ -41,10 +41,10 @@
   <h2>Text editor with auto-save</h2>
  
   <!-- here be our editable area -->
-<div id="editor" contenteditable="true"; margin:10px">
+<div id="gw2box" class="editor" contenteditable="true"; margin:10px">
 First DIV
 </div>
-<div id="editor" contenteditable="true"; margin:10px">
+<div id="genshinbox" class="editor" contenteditable="true"; margin:10px">
 Second DIV
 </div>
 
@@ -58,14 +58,14 @@ Second DIV
     if (localStorage.getItem('text_in_editor') !== null) {
  
         // ...then show it
-        document.getElementById('editor').innerHTML = localStorage.getItem('text_in_editor');
+        document.getElementsByClassName('editor').innerHTML = localStorage.getItem('text_in_editor');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_editor', document.getElementById('editor').innerHTML);
+      localStorage.setItem('text_in_editor', document.getElementsByClassName('editor').innerHTML);
     });
 
 </script>
