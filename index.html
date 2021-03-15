@@ -1,17 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <script src="jquery-3.6.0.min.js"></script>
-  <script src="logic.js"></script>
-  <link rel="stylesheet" href="styles.css">
+<html> 
+<head> 
+    <title>My text editor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.6.0.min.js"></script>
+ 
+  <!-- some minimal design (not necessary)-->
+  <style type="text/css">
+    body{
+      background-color: #36393f;
+      text-align: left;
+      color: #efefef;
+      padding: 10px 2vw 0px 2vw;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    }
+    .editor{
+      background-color: #1d2025;
+      height: 750px;
+      max-height: 90%;
+      width:40%;
+      margin-right:20px;
+/*       max-width: 760px; */
+	  float:left;
+      padding: 1vw 1vw 1vw 1vw;
+      font-family: helvetica, sans-serif;
+      font-size: 1.3em;
+      line-height: 1.4;
+      -webkit-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+      -moz-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+      box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+    }
+  </style>
+
 </head>
 <body>
 
-  <label>TEXT 1111: </label>
-  <input type="text" id="text_1" value="" />
-  <br>
-  <label>TEXT 2: </label>
-  <span id="text_2"></span>
+  <!-- heading -->
+  <h2>Text editor with auto-save</h2>
+ 
+  <!-- here be our editable area -->
+<div id="gw2box" class="editor" contenteditable="true"; margin:10px">
+First DIV
+</div>
+<div id="genshinbox" class="editor" contenteditable="true"; margin:10px">
+Second DIV
+</div>
 
+
+ 
+  <!-- Here be our scripts -->
+
+
+<script>
+
+    // If there's anything in the storage
+    if (localStorage.getItem('text_in_gw2box') !== null) {
+ 
+        // ...then show it
+        document.getElementById('gw2box').innerHTML = localStorage.getItem('text_in_gw2box');
+      }
+
+    // listen to key presses
+    document.addEventListener('keydown', function(e) {
+
+      // once a key is pressed, save whatever's in our box to localstorage
+      localStorage.setItem('text_in_gw2box', document.getElementById('gw2box').innerHTML);
+    });
+
+</script>
+
+
+
+<script>
+
+    // If there's anything in the storage
+    if (localStorage.getItem('text_in_genshinbox') !== null) {
+ 
+        // ...then show it
+        document.getElementById('genshinbox').innerHTML = localStorage.getItem('text_in_genshinbox');
+      }
+
+    // listen to key presses
+    document.addEventListener('keydown', function(e) {
+
+      // once a key is pressed, save whatever's in our box to localstorage
+      localStorage.setItem('text_in_genshinbox', document.getElementById('genshinbox').innerHTML);
+    });
+
+</script>
+ 
 </body>
+<!-- That's all folks -->
 </html>
