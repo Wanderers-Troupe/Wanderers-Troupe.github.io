@@ -39,23 +39,17 @@
 <body>
 
   <!-- heading -->
-  <h2>Text editor with auto-saveawwaw</h2>
+  <h2>Text editor with auto-savehehlpelpelpe</h2>
  
   <!-- here be our editable area -->
-<div id="gw2box" class="editor" contenteditable="true"; margin:10px">
-First DIV
-</div>
-<div id="genshinbox" class="editor" contenteditable="true"; margin:10px">
-Second DIV
-</div>
-
-
+  <textarea id="gw2" class="editor"></textarea>
+  <textarea id="genshin" class="editor"></textarea>
  
   <!-- Here be our scripts -->
 
   <script>
-    var gw2 = document.getElementById("gw2box");
-    var genshin = document.getElementById("genshinbox");
+    var gw2 = document.getElementById("gw2");
+    var genshin = document.getElementById("genshin");
     gw2.oninput = function(e) {
       genshin.value = gw2.value;
     }
@@ -64,17 +58,17 @@ Second DIV
 <script>
 
     // If there's anything in the storage
-    if (localStorage.getItem('text_in_gw2box') !== null) {
+    if (localStorage.getItem('text_in_gw2') !== null) {
  
         // ...then show it
-        document.getElementById('gw2box').innerHTML = localStorage.getItem('text_in_gw2box');
+        document.getElementById('gw2').innerHTML = localStorage.getItem('text_in_gw2');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_gw2box', document.getElementById('gw2box').innerHTML);
+      localStorage.setItem('text_in_gw2', document.getElementById('gw2').innerHTML);
     });
 
 </script>
@@ -84,17 +78,17 @@ Second DIV
 <script>
 
     // If there's anything in the storage
-    if (localStorage.getItem('text_in_genshinbox') !== null) {
+    if (localStorage.getItem('text_in_genshin') !== null) {
  
         // ...then show it
-        document.getElementById('genshinbox').innerHTML = localStorage.getItem('text_in_genshinbox');
+        document.getElementById('genshin').innerHTML = localStorage.getItem('text_in_genshin');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_genshinbox', document.getElementById('genshinbox').innerHTML);
+      localStorage.setItem('text_in_genshin', document.getElementById('genshin').innerHTML);
     });
 
 </script>
