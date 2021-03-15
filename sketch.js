@@ -7,7 +7,7 @@ function setup() {
     textfield = select("#textfield");
 //    textfield.changed(newText);
 //    textfield.input(newTyping);
-    output = select('#output');
+//    output = select('#output');
 
 }
 
