@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
-$("#boxx").on('keypress change', function(event) {
-    var data=$(this).val();
-    $("div").text(data);
-});
+    $("#text_1").keyup(function() {
+        $("#text_2").text($("#text_1").val());
+      })
+      
+
 });
