@@ -3,7 +3,7 @@ var output;
 
 function setup() {
     noCanvas();
-    textfield = createInput();
+    textfield = createInput("Enter tab here");
     textfield.changed(newText);
     textfield.input(newTyping);
     output = select('#output');
