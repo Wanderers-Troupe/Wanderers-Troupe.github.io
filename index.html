@@ -34,13 +34,14 @@
       -moz-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
       box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
     }
+    
   </style>
 
 </head>
 <body>
 
   <!-- heading -->
-  <h2>Text editor with auto-save I hope</h2>
+  <h2>Text editor with auto-save I hope?</h2>
  
   <!-- here be our editable area -->
   <textarea id="gw2" class="editor"></textarea>
@@ -78,17 +79,13 @@
 
 <script>
 
-    // If there's anything in the storage
     if (localStorage.getItem('text_in_genshin') !== null) {
  
-        // ...then show it
         document.getElementById('genshin').value = localStorage.getItem('text_in_genshin');
       }
 
-    // listen to key presses
     document.addEventListener('keydown', function(e) {
 
-      // once a key is pressed, save whatever's in our box to localstorage
       localStorage.setItem('text_in_genshin', document.getElementById('genshin').value);
     });
 
