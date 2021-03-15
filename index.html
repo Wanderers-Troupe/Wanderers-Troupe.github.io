@@ -62,8 +62,11 @@
 
 </script>
 
+<input type="text" id="fname" onkeyup="myFunction()">
+
 <script>
 
+function myFunction() {
 var text = document.getElementById("editor");
 var str = text.innerHTML,
     reg = /red|blue|green|orange/ig; //g is to replace all occurances
@@ -91,8 +94,9 @@ if (colors.indexOf("orange") > -1) {
     str = str.replace(/orange/g, '<span style="color:orange;">orange</span>');
 }
 
-
 document.getElementById("updateditor").innerHTML = str;
+
+}
 
   </script>
  
