@@ -53,13 +53,13 @@ Second DIV
  
   <!-- Here be our scripts -->
 
-<script> $("#gw2box").keyup(function(){
-  $("#genshinbox").val($("#gw2box").val());
-}); </script>
-
-<script> $("#genshinbox").keyup(function(){
-  $("#gw2box").val($("#genshinbox").val());
-}); </script>
+  <script>
+    var a = document.getElementById("gw2box");
+    var b = document.getElementById("genshinbox");
+    a.oninput = function(e) {
+      gw2box.value = genshinbox.value;
+    }
+  </script>
 
 <script>
 
