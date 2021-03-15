@@ -41,18 +41,18 @@
   <h2>Text editor with auto-save</h2>
  
   <!-- here be our editable area -->
-<div id="gw2box" class="editor" contenteditable="true"; margin:10px">
+<div id="gw2box" tabindex="0" class="editor" contenteditable="true"; margin:10px" onKeyUp="setBox()">
 First DIV
 </div>
-<div id="genshinbox" class="editor" contenteditable="true"; margin:10px">
+<div id="genshinbox" tabindex="0" class="editor" contenteditable="true"; margin:10px"  onKeyUp="setBox()">
 Second DIV
 </div>
 
 
  
-  <!-- Here be our script -->
+  <!-- Here be our scripts -->
 
-  <script>
+<script>
 
     // If there's anything in the storage
     if (localStorage.getItem('text_in_gw2box') !== null) {
@@ -69,6 +69,8 @@ Second DIV
     });
 
 </script>
+
+
 
 <script>
 
