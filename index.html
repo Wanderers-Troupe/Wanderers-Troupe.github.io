@@ -58,14 +58,14 @@ Second DIV
     if (localStorage.getItem('text_in_gw2box') !== null) {
  
         // ...then show it
-        document.getElementsById('gw2box').innerHTML = localStorage.getItem('text_in_gw2box');
+        document.getElementById('gw2box').innerHTML = localStorage.getItem('text_in_gw2box');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_gw2box', document.getElementsById('gw2box').innerHTML);
+      localStorage.setItem('text_in_gw2box', document.getElementById('gw2box').innerHTML);
     });
 
 </script>
@@ -76,14 +76,14 @@ Second DIV
     if (localStorage.getItem('text_in_genshinbox') !== null) {
  
         // ...then show it
-        document.getElementsById('genshinbox').innerHTML = localStorage.getItem('text_in_genshinbox');
+        document.getElementById('genshinbox').innerHTML = localStorage.getItem('text_in_genshinbox');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_genshinbox', document.getElementsById('genshinbox').innerHTML);
+      localStorage.setItem('text_in_genshinbox', document.getElementById('genshinbox').innerHTML);
     });
 
 </script>
