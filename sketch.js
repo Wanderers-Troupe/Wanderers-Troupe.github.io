@@ -1,16 +1,18 @@
 var textfield;
+var output;
 
 function setup() {
     noCanvas();
     textfield = createInput();
-
-//    textfield.changed(newText);
+    textfield.changed(newText);
     textfield.input(newTyping);
+    output = select('#output');
 
 }
 
 function newTyping() {
-    createP(textfield.value());
+    output.html(textfield.value());
+    //createP(textfield.value());
 }
 
 function newText() {
