@@ -34,16 +34,28 @@
       -moz-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
       box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
     }
+    
+    
+    .red {
+    color: red;
+}
+#result {
+    font-size: 24px;
+    font-weight: bold;
+}
+    
+    
   </style>
 
 </head>
 <body>
 
   <!-- heading -->
-  <h2>Text editor with auto-save I hope</h2>
+  <h2>Text editor with auto-save I hopeaaaaaaa</h2>
  
   <!-- here be our editable area -->
   <textarea id="gw2" class="editor"></textarea>
+  <div id="result"></div>
   <textarea id="genshin" class="editor"></textarea>
  
   <!-- Here be our scripts -->
@@ -78,21 +90,41 @@
 
 <script>
 
-    // If there's anything in the storage
     if (localStorage.getItem('text_in_genshin') !== null) {
  
-        // ...then show it
         document.getElementById('genshin').value = localStorage.getItem('text_in_genshin');
       }
 
-    // listen to key presses
     document.addEventListener('keydown', function(e) {
 
-      // once a key is pressed, save whatever's in our box to localstorage
       localStorage.setItem('text_in_genshin', document.getElementById('genshin').value);
     });
 
 </script>
+
+
+
+<script>
+   $( document ).ready( function(){
+
+var alpha = ["s","x","e","T"];
+var res = "", cls = "";
+var t = $("#gw2").text();
+
+for (i=0; i<t.length; i++) {
+    for (j=0; j<alpha.length; j++) {
+        if (t[i] == alpha[j]) {cls = "red";}
+    }
+    res += "<span class='"+cls+"'>"+t[i]+"</span>";
+    cls="";
+}
+$("#result").html(res);
+
+   });
+
+</script>
+
+
  
 </body>
 <!-- That's all folks -->
