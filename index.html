@@ -24,4 +24,11 @@
   <!-- here will be our block and then the script -->
 
 </body>
+
+<script>
+    document.addEventListener('keydown', function(e) {
+      localStorage.setItem('text_in_editor',   document.getElementById('editor').innerHTML);
+    });
+  </script>
+
 </html>
