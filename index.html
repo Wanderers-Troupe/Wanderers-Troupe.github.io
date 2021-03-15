@@ -66,7 +66,7 @@
 
 var text = document.getElementById("editor");
 var str = text.innerHTML,
-    reg = /red|blue|green|orange/ig; //g is to replace all occurances
+    reg = /\[.*?\]|blue|green|orange/ig; //g is to replace all occurances
 
 //fixing a bit
 var toStr = String(reg);
@@ -75,8 +75,8 @@ var color = (toStr.replace('\/g', '|')).substring(1);
 //split it baby
 var colors = color.split("|");
 
-if (colors.indexOf("red") > -1) {
-    str = str.replace(/red/g, '<span style="color:red;">red</span>');
+if (colors.indexOf("\[.*?\]") > -1) {
+    str = str.replace(/\[.*?\]/g, '<span style="color:#6fa8dc;">\[.*?\]</span>');
 }
 
 if (colors.indexOf("blue") > -1) {
