@@ -10,9 +10,9 @@ function setup() {
 }
 
 function newTyping() {
-    createP(input.value());
+    createP(textfield.value());
 }
 
 function newText() {
-    createP(input.value());
+    createP(textfield.value());
 }
