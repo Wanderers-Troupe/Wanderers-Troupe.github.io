@@ -5,9 +5,9 @@ function setup() {
     noCanvas();
     //textfield = createInput("Enter tab here");
     textfield = select("#textfield");
-//    textfield.changed(newText);
-//    textfield.input(newTyping);
-//    output = select('#output');
+    textfield.changed(newText);
+    textfield.input(newTyping);
+    output = select('#output');
 
 }
 
