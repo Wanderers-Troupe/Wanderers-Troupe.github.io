@@ -38,7 +38,7 @@
 <body>
 
   <!-- heading -->
-  <h2>Text editor with auto-save</h2>
+  <h2>Text editor with auto-save123</h2>
  
   <!-- here be our editable area -->
 <div id="gw2box" class="editor" contenteditable="true"; margin:10px">
@@ -54,37 +54,24 @@ Second DIV
 
   <script>
 
+var elements = document.getElementsByClassName("editor");
+for (i=0; i<elements.length; i++) {
+
     // If there's anything in the storage
-    if (localStorage.getItem('text_in_gw2box') !== null) {
+    if (localStorage.getItem('editor') !== null) {
  
         // ...then show it
-        document.getElementById('gw2box').innerHTML = localStorage.getItem('text_in_gw2box');
+        document.getElementsByClassName('editor').innerHTML = localStorage.getItem('editor');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_gw2box', document.getElementById('gw2box').innerHTML);
+      localStorage.setItem('editor', document.getElementsByClassName('editor').innerHTML);
     });
 
-</script>
-
-<script>
-
-    // If there's anything in the storage
-    if (localStorage.getItem('text_in_genshinbox') !== null) {
- 
-        // ...then show it
-        document.getElementById('genshinbox').innerHTML = localStorage.getItem('text_in_genshinbox');
-      }
-
-    // listen to key presses
-    document.addEventListener('keydown', function(e) {
-
-      // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_genshinbox', document.getElementById('genshinbox').innerHTML);
-    });
+  }
 
 </script>
  
