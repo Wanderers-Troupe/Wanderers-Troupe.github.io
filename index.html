@@ -39,7 +39,7 @@
 <body>
 
   <!-- heading -->
-  <h2>Text editor with auto-save</h2>
+  <h2>Text editor with auto-save! !</h2>
  
   <!-- here be our editable area -->
 <div id="gw2box" class="editor" contenteditable="true"; margin:10px">
@@ -53,11 +53,11 @@ Second DIV
  
   <!-- Here be our scripts -->
 
-<script>$("#gw2box").keyup(function(){
+<script> $("#gw2box").keyup(function(){
   $("#genshinbox").val($("#gw2box").val());
-});
+}); </script>
 
-$("#genshinbox").keyup(function(){
+<script> $("#genshinbox").keyup(function(){
   $("#gw2box").val($("#genshinbox").val());
 }); </script>
 
