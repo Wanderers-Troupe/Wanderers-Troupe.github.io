@@ -55,17 +55,35 @@ Second DIV
   <script>
 
     // If there's anything in the storage
-    if (localStorage.getItem('text_in_editor') !== null) {
+    if (localStorage.getItem('text_in_gw2box') !== null) {
  
         // ...then show it
-        document.getElementsByClassName('editor').innerHTML = localStorage.getItem('text_in_editor');
+        document.getElementsById('gw2box').innerHTML = localStorage.getItem('text_in_gw2box');
       }
 
     // listen to key presses
     document.addEventListener('keydown', function(e) {
 
       // once a key is pressed, save whatever's in our box to localstorage
-      localStorage.setItem('text_in_editor', document.getElementsByClassName('editor').innerHTML);
+      localStorage.setItem('text_in_gw2box', document.getElementsById('gw2box').innerHTML);
+    });
+
+</script>
+
+<script>
+
+    // If there's anything in the storage
+    if (localStorage.getItem('text_in_genshinbox') !== null) {
+ 
+        // ...then show it
+        document.getElementsById('genshinbox').innerHTML = localStorage.getItem('text_in_genshinbox');
+      }
+
+    // listen to key presses
+    document.addEventListener('keydown', function(e) {
+
+      // once a key is pressed, save whatever's in our box to localstorage
+      localStorage.setItem('text_in_genshinbox', document.getElementsById('genshinbox').innerHTML);
     });
 
 </script>
