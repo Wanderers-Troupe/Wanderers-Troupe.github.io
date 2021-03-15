@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title>GW2 to Genshin Converter</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="jquery-3.6.0.min.js"> </script> 
+ 
+  <!-- some minimal design (not necessary)-->
+  <style type="text/css">
+    body{
+      background-color: #36393f;
+      text-align: left;
+      color: #efefef;
+      padding: 10px 2vw 0px 2vw;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    }
+    .editor{
+      background-color: #1d2025;
+      color: #efefef;
+      height: 750px;
+      max-height: 90%;
+      width:40%;
+      margin-right:20px;
+/*       max-width: 760px; */
+	  float:left;
+      padding: 1vw 1vw 1vw 1vw;
+      font-family: helvetica, sans-serif;
+      font-size: 1.3em;
+      line-height: 1.4;
+      -webkit-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+      -moz-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+      box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+    }
+    
+  </style>
+
+</head>
+<body>
+
+  <!-- heading -->
+  <h2>GW2 to Genshin Converter</h2>
+ 
+  <!-- here be our editable area -->
+  <textarea id="gw2" class="editor"></textarea>
+  <textarea id="genshin" class="editor"></textarea>
+ 
+  <!-- Here be our scripts -->
+
+  <script>
+    var gw2 = document.getElementById("gw2");
+    var genshin = document.getElementById("genshin");
+    gw2.oninput = function(e) {
+      genshin.value = gw2.value
+      
+	  /*  Specific early fixes.  */   
+      
+      .replace(/\(\//gm, "/(")
+      /* Reverse (/ because people are stupid. */
+      
+      .replace(/\/\]/gm, "]/")
+      /* Reverse /] because people are stupid. */
+      
+      
+      
+      .replace(/([\d\)\]])([\d])/gm, "$1-$2")
+      /* Adding a dash between bracketed notes that are too close together. I think. */
+      
+      .replace(/([\d\)\]])([\d])/gm, "$1-$2")
+      /* Running it twice just to cover outliers. */      
+      
+      
+      
+      .replace(/([\d])([\d\(\[])/gm, "$1-$2")
+      /* Adding a dash between bracketed notes that are too close together. I think. */
+      
+      .replace(/([\d])([\d\(\[])/gm, "$1-$2")
+      /* Running it twice just to cover outliers. */  
+      
+      
+      
+	  /*  Numbers to letters.  */  
+      
+      .replace(/1(?=[^\[]*\])/gm, "Z")
+      .replace(/2(?=[^\[]*\])/gm, "X")
+      .replace(/3(?=[^\[]*\])/gm, "C")
+      .replace(/4(?=[^\[]*\])/gm, "V")
+      .replace(/5(?=[^\[]*\])/gm, "B")
+      .replace(/6(?=[^\[]*\])/gm, "N")
+      .replace(/7(?=[^\[]*\])/gm, "M")
+      .replace(/8(?=[^\[]*\])/gm, "A")
+      
+	  .replace(/1(?=[^\(]*\))/gm, "Q")
+	  .replace(/2(?=[^\(]*\))/gm, "W")
+	  .replace(/3(?=[^\(]*\))/gm, "E")
+	  .replace(/4(?=[^\(]*\))/gm, "R")      
+	  .replace(/5(?=[^\(]*\))/gm, "T")
+	  .replace(/6(?=[^\(]*\))/gm, "Y")
+	  .replace(/7(?=[^\(]*\))/gm, "U")            
+	  .replace(/8(?=[^\(]*\))/gm, "?")    
+      
+	  .replace(/1/gm, "A")       
+	  .replace(/2/gm, "S") 
+	  .replace(/3/gm, "D")  
+	  .replace(/4/gm, "F")  
+	  .replace(/5/gm, "G")       
+	  .replace(/6/gm, "H") 
+	  .replace(/7/gm, "J")  
+	  .replace(/8/gm, "Q")  
+      
+      
+	  /*  Specific fixes.  */          
+     
+	  .replace(/[\[\]\(\)]/gm, "")  
+	  /*  Removes all octave brackets.  */
+      
+      .replace(/\//gm, "")
+      /*  Removes all chord slashes.  */
+     
+      .replace(/\[A/gm, "A[")
+      /* Turns for example [ADGH] into A[DGH]. */
+      
+      .replace(/A\]/gm, "]A")
+      /* Turns for example [VNA]H into [VN]AH. */
+      
+      .replace(/[\)]([^\S\r\n]{0,1}[-━—_~]{0,1}[^\S\r\n]{0,1})[\(]/gm, "$1")
+      /* Removes ")(" */
+      
+      .replace(/[\]]([^\S\r\n]{0,1}[-━—_~]{0,1}[^\S\r\n]{0,1})[\[]/gm, "$1")
+	  /* Removes "][" */
+      
+      
+      ;
+    }
+  </script>
+
+<script>
+
+    // If there's anything in the storage
+    if (localStorage.getItem('text_in_gw2') !== null) {
+ 
+        // ...then show it
+        document.getElementById('gw2').value = localStorage.getItem('text_in_gw2');
+      }
+
+    // listen to key presses
+    document.addEventListener('keydown', function(e) {
+
+      // once a key is pressed, save whatever's in our box to localstorage
+      localStorage.setItem('text_in_gw2', document.getElementById('gw2').value);
+    });
+
+</script>
+
+
+
+<script>
+
+    if (localStorage.getItem('text_in_genshin') !== null) {
+ 
+        document.getElementById('genshin').value = localStorage.getItem('text_in_genshin');
+      }
+
+    document.addEventListener('keydown', function(e) {
+
+      localStorage.setItem('text_in_genshin', document.getElementById('genshin').value);
+    });
+
+</script>
+ 
+</body>
+<!-- That's all folks -->
+</html>
