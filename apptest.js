@@ -115,6 +115,19 @@ function genshinStorage() {
 }
 
 $('.editor').highlightWithinTextarea({
-    highlight: /dogs?|cats?|g(oo|ee)se/gi
+    highlight: [
+        {
+            highlight: 'strawberry',
+            className: 'red'
+        },
+        {
+            highlight: 'blueberry',
+            className: 'blue'
+        },
+        {
+            highlight: /ba(na)*/gi,
+            className: 'yellow'
+        }
+    ]
 });
 	
