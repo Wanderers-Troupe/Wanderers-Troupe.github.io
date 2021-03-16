@@ -68,33 +68,11 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         /* Removes "][" */
         .replace(/[\]]([^\S\r\n]{0,1}[-━—_~]{0,1}[^\S\r\n]{0,1})[\[]/gm, "$1");
 
-
-    /*$('document').ready(function() {
-        $('.editor').each(function() {
-            var target = $(this).html();
-            target = target.split("");
-            var result = "";
-            for (var i = 0, len = target.length; i < len; i++) {
-                result += '<span class="' + target[i] + '">' + V + '</span>';
-            }
-            $(this).html(result);
-        });
-    });*/
-
     
 }
 
 
-function printColor() {
-    
-    var span = document.getElementById('gw2').value,
-    text = span.innerHTML.split('').map(function(el) {
-        return '<span class="char-' + el.toLowerCase() + '">' + el + '</span>';
-    }).join('');
-  
-    span.innerHTML = text;
 
-}
 
 
 
@@ -113,7 +91,7 @@ function gw2Storage() {
     }
 
     // listen to key presses
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('input', function(e) {
 
     // once a key is pressed, save whatever's in our box to localstorage
     localStorage.setItem('text_in_gw2', document.getElementById('gw2').value);
@@ -131,7 +109,7 @@ function genshinStorage() {
     }
 
     // listen to key presses
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('input', function(e) {
 
     // once a key is pressed, save whatever's in our box to localstorage
     localStorage.setItem('text_in_genshin', document.getElementById('genshin').value);
