@@ -113,3 +113,8 @@ function genshinStorage() {
     localStorage.setItem('text_in_genshin', document.getElementById('genshin').value);
     });
 }
+
+$('.editor').highlightWithinTextarea({
+    highlight: /dogs?|cats?|g(oo|ee)se/gi
+});
+	
