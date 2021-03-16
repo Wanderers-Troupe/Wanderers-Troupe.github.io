@@ -5,7 +5,7 @@
       max-height: 90%;
       width:45%;
       margin:0vw 0vw 0vw 2vw;
-/*       max-width: 760px; */
+/*       max-width: 761px; */
 	  float:left;
       padding: 1vw 1vw 1vw 1vw;
       font-family: helvetica, sans-serif;
@@ -115,3 +115,5 @@ ul.topnav li.right {float: right;}
       color: #efefef !important;
       overflow: hidden !important;
     }
+
+
