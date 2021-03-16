@@ -9,16 +9,16 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         .replace(/\/\]/gm, "]/")
         
         /* Adding a dash between bracketed notes that are too close together. I think. */
-        .replace(/([\d\)\]])([\d])/gm, "$1-$2")
+        .replace(/([\d\)\]])([\d])/gm, "$1‧$2")
         
         /* Running it twice just to cover outliers. */ 
-        .replace(/([\d\)\]])([\d])/gm, "$1-$2")
+        .replace(/([\d\)\]])([\d])/gm, "$1‧$2")
 
         /* Adding a dash between bracketed notes that are too close together. I think. */
-        .replace(/([\d])([\d\(\[])/gm, "$1-$2")
+        .replace(/([\d])([\d\(\[])/gm, "$1‧$2")
         
         /* Running it twice just to cover outliers. */  
-        .replace(/([\d])([\d\(\[])/gm, "$1-$2")
+        .replace(/([\d])([\d\(\[])/gm, "$1‧$2")
 
         /*  Numbers to letters.  */  
         .replace(/1(?=[^\[]*\])/gm, "Z")
