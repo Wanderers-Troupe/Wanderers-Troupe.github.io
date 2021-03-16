@@ -4,8 +4,8 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
 /*  Specific early fixes.  */   
 
         /* Convert all uppercase letters to lowercase letters. */
-        .replace(/(A-Z)/gm), "\L$1"
-        
+        .replace(/(A-Z)/gm, "\L$1")
+
         /* Reverse (/ because people are stupid. */
         .replace(/\(\//gm, "/(")
     
