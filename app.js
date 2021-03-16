@@ -2,7 +2,11 @@ function replace() {
 document.getElementById("genshin").value = document.getElementById("gw2").value
 
 /*  Specific early fixes.  */   
-    /* Reverse (/ because people are stupid. */
+
+        /* Convert all uppercase letters to lowercase letters. */
+        .replace(/(A-Z)/gm), "\L$1"
+        
+        /* Reverse (/ because people are stupid. */
         .replace(/\(\//gm, "/(")
     
         /* Reverse /] because people are stupid. */
