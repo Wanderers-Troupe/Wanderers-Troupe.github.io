@@ -17,6 +17,13 @@
 
 }
 
+.editor::selection{
+                  background-color:#00eaff;
+                  color:#ffffff;
+                  text-shadow: 1px 1px 0px #000000;
+
+}
+
 h2{margin:1vw 0vw 1vw 2vw;}
 
 textarea {resize: none;}
@@ -115,5 +122,12 @@ ul.topnav li.right {float: right;}
       color: #efefef !important;
       overflow: hidden !important;
     }
+
+    #bug {font-weight: bolder;
+    color: #e06666;
+    margin: auto;
+    padding-top: 0.75vw;
+    width: 40%;
+  }
 
 

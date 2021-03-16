@@ -24,12 +24,13 @@
 			height: 750px;
 			padding: 20px;
 			border: 1px solid #adb5bd;
+			margin-left: 5%;
 			color: transparent;
 			font: 18px/25px 'Droid Sans Mono', sans-serif;
 		}
 
 		.hwt-input:focus {
-			outline-color: #495057;
+			outline-color: transparent;
 		}
 
 		.hwt-content mark {
@@ -45,8 +46,8 @@
 			color: #6fa8dc !important;
 		}
 
-		.hwt-content mark.yellow {
-			background-color: #ffec99;
+		.hwt-content mark.grey {
+			color: #cccccc;
 		}
 	</style>
 
@@ -58,9 +59,9 @@
 
 	<ul class="topnav">
     <li><a href="https://wanderers-troupe.github.io">Home</a></li>
-    <li><a class="active" href="https://wanderers-troupe.github.io/converter">GW2 to Genshin Tab Converter</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li class="right"><a href="#about">About</a></li>  
+    <li><a href="https://wanderers-troupe.github.io/converter">GW2 to Genshin Tab Converter</a></li>
+    <li><a class="active" href="https://wanderers-troupe.github.io/convertest">WIP Converter</a></li>
+<!--     <li class="right"><a href="#about">About</a></li>   -->
   </ul>
 
   <!-- heading -->
@@ -69,6 +70,7 @@
   <!-- here be our editable area -->
 	<textarea id="gw2" oninput="replace()" class="editor"></textarea>
 	<textarea id="genshin" class="editor"></textarea>
+	<div id="bug">BUG: Text fields not updating? Left-click on fields and hit spacebar.</div>
 
 	<script>
 		$('.editor').highlightWithinTextarea({
@@ -78,8 +80,21 @@
 					className: 'red'
 				},
 				{
+					highlight: /[QWERTYU]/gm,
+					className: 'red'
+				},
+
+				{
 					highlight: /\[.*?\]/gm,
 					className: 'blue'
+				},
+				{
+					highlight: /[ZXCVBNM]/gm,
+					className: 'blue'
+				},
+				{
+					highlight: /[-\.,‧━—_~]/gm,
+					className: 'grey'
 				}
 			]
 		});

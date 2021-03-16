@@ -66,13 +66,14 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         .replace(/A\]/gm, "]A")
         
         /* Removes ")(" */
-        .replace(/[\)]([^\S\r\n]{0,1}[-━—_~]{0,1}[^\S\r\n]{0,1})[\(]/gm, "$1")
+        .replace(/[\)]([^\S\r\n]{0,1}[-\.,‧━—_~]{0,1}[^\S\r\n]{0,1})[\(]/gm, "$1")
         
         /* Removes "][" */
-        .replace(/[\]]([^\S\r\n]{0,1}[-━—_~]{0,1}[^\S\r\n]{0,1})[\[]/gm, "$1");
+        .replace(/[\]]([^\S\r\n]{0,1}[-\.,‧━—_~]{0,1}[^\S\r\n]{0,1})[\[]/gm, "$1");
 
     
 }
+
 
 
 
