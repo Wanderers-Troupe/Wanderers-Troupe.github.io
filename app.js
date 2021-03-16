@@ -77,11 +77,6 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
 
 
 
-
-
-
-
-
 function gw2Storage() {
     // If there's anything in the storage
     if (localStorage.getItem('text_in_gw2') !== null) {
