@@ -1,0 +1,64 @@
+.editor{
+      background-color: #1d2025;
+      color: #efefef;
+      height: 750px;
+      max-height: 90%;
+      width:45%;
+      margin:0vw 0vw 0vw 2vw;
+/*       max-width: 760px; */
+	  float:left;
+      padding: 1vw 1vw 1vw 1vw;
+      font-family: helvetica, sans-serif;
+      font-size: 1.3em;
+      line-height: 1.4;
+      -webkit-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+      -moz-box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+      box-shadow: 2px 10px 35px -16px rgba(0,0,0,0.52);
+
+}
+
+h2{margin:1vw 0vw 1vw 2vw;}
+
+textarea {resize: none;}
+
+
+body {
+      margin: 0;
+      background-color: #36393f;
+      color: #efefef;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    
+    }
+    
+ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000000;
+    }
+    
+ul.topnav li {float: left;}
+    
+ul.topnav li a {
+      display: block;
+      color: #efefef;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: 0.3s
+    }
+    
+ul.topnav li a.active {background-color: #00eaff;
+    color: #ffffff;}
+    
+ul.topnav li a:hover:not(.active) {background-color: #1d2025;
+    color: #ffffff;}
+    
+ul.topnav li.right {float: right;}
+    
+@media screen and (max-width: 600px) {
+      ul.topnav li.right, 
+      ul.topnav li {float: none;}
+    }
