@@ -84,16 +84,6 @@ ul.topnav li.right {float: right;}
       overflow-y: auto !important;
     }
     
-    .hwt-highlights {
-      width: auto !important;
-      height: auto !important;
-      border-color: transparent !important;
-      white-space: pre-wrap !important;
-      word-wrap: break-word !important;
-      color: transparent !important;
-      overflow: hidden !important;
-    }
-    
     .hwt-input {
       display: block !important;
       position: relative !important;
@@ -107,6 +97,7 @@ ul.topnav li.right {float: right;}
     }
     
     .hwt-content {
+      color: transparent;
       border: 1px solid;
       background: none transparent !important;
     }
@@ -114,4 +105,14 @@ ul.topnav li.right {float: right;}
     .hwt-content mark {
       padding: 0 !important;
       color: inherit;
+    }
+
+    .hwt-highlights {
+      width: auto !important;
+      height: auto !important;
+      border-color: transparent !important;
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+      color: #efefef !important;
+      overflow: hidden !important;
     }
