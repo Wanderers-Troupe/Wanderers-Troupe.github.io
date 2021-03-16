@@ -58,7 +58,7 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         
         /*  Specific fixes.  */
         /*  Removes all octave brackets.  */
-        .replace(/[\[\]\(\)]/gm, "")  
+        .replace(/[\[\]\(\)\{\}]/gm, "")  
         
         /*  Removes all chord slashes.  */
         .replace(/\//gm, "")
