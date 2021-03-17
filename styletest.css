@@ -3,7 +3,7 @@
       color: transparent;
       height: 750px;
       max-height: 90%;
-      width:45%;
+      width:48%;
       margin:0vw 0vw 0vw 2vw;
 /*       max-width: 761px; */
 	  float:left;
@@ -75,8 +75,9 @@ ul.topnav li.right {float: right;}
 
     .hwt-container {
       display: inline-block;
+      width: 48%;
       position: relative;
-      overflow: hidden !important;
+      overflow: visible !important;
       -webkit-text-size-adjust: none !important;
     }
     
@@ -114,20 +115,18 @@ ul.topnav li.right {float: right;}
     }
 
     .hwt-highlights {
-      width: auto !important;
+      width: 48%;
       height: auto !important;
       border-color: transparent !important;
       white-space: pre-wrap !important;
-      word-wrap: break-word !important;
       color: #efefef !important;
-      overflow: hidden !important;
     }
 
     #bug {font-weight: bolder;
     color: #e06666;
     margin: auto;
     padding-top: 0.75vw;
-    width: 40%;
+    width: 35%;
   }
 
 
