@@ -10,7 +10,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<link href="styletest.css" rel="stylesheet">
-	<script type = "text/javascript" src="app.js"></script>
+	<script type = "text/javascript" src="ps4app.js"></script>
 
 	<script src="jquery.highlight-within-textarea.js"></script>
 
@@ -60,8 +60,8 @@
 	<ul class="topnav">
     <li><a href="https://wanderers-troupe.github.io">Home</a></li>
     <li><a href="https://wanderers-troupe.github.io/converter">GW2 to Genshin</a></li>
-    <li><a class="active" href="https://wanderers-troupe.github.io/convertest">GW2 to Genshin (WIP Colours)</a></li>
-    <li><a class="active" href="https://wanderers-troupe.github.io/ps4convertest">PS4 Converter (WIP Colours)</a></li>
+    <li><a class="active" href="https://wanderers-troupe.github.io/convertest">GW2 to Genshin (WIP Colours)/a></li>
+		<li><a class="active" href="https://wanderers-troupe.github.io/ps4convertest">PS4 Converter (WIP Colours)/a></li>
 <!--     <li class="right"><a href="#about">About</a></li>   -->
   </ul>
 
@@ -77,7 +77,11 @@
 		$('.editor').highlightWithinTextarea({
 			highlight: [
 				{
-					highlight: /\(.*?\)/gm,
+					highlight: /[^A-Z\d\[\]\(\)\/←↑→↓▢△O]/gm,
+					className: 'grey'
+				},
+				{
+					highlight: /\).*?\)/gm,
 					className: 'red'
 				},
 				{
@@ -86,16 +90,12 @@
 				},
 
 				{
-					highlight: /\[.*?\]/gm,
+					highlight: /\(.*?\(/gm,
 					className: 'blue'
 				},
 				{
 					highlight: /[ZXCVBNM]/gm,
 					className: 'blue'
-				},
-				{
-					highlight: /[^A-Z\d\[\]\(\)\/]/gm,
-					className: 'grey'
 				}
 			]
 		});
