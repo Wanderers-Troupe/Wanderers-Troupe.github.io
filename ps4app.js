@@ -71,8 +71,57 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         /* A lot of bullshit for replacing Cs of different octaves. */
 
          .replace(/(\(.*?)\(/gm, "$1CLOSINGBRACKET")
+
+         /* We'll run the same code a lot of times becaues I can't figure out a different way to do it. */
+
          .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
          .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")        
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")       
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")        
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")    
+        
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")        
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")       
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")        
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")    
+
          .replace(/CLOSINGBRACKET/gm, "(")
          .replace(/8/gm, ")←)")
 
