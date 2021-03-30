@@ -67,8 +67,16 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         .replace(/5(?=[^\[]*\])/gm, "▢")
         .replace(/6(?=[^\[]*\])/gm, "△")
         .replace(/7(?=[^\[]*\])/gm, "O") */
-            .replace(/8(?=[(^\n]*\()/gm, "(←(")     
-           .replace(/8(?=[^[^\(]*\((?=[^\(]*(?:\([^\(]*\()*[^\(]*$).*$)/gm, "(←(")   
+
+        /* A lot of bullshit for replacing Cs of different octaves. */
+
+         .replace(/(\(.*?)\(/gm, "$1CLOSINGBRACKET")
+         .replace(/(\(.*?)(8)(?=.*?(CLOSINGBRACKET))/gm, "$1Ö$2Ö") 
+         .replace(/Ö8Ö/gm, "(←(")
+         .replace(/CLOSINGBRACKET/gm, "(")
+         .replace(/8/gm, ")←)")
+
+
            .replace(/\(\(/gm, "")           
         
 /*         .replace(/1(?=[^\(]*\))/gm, "←")
