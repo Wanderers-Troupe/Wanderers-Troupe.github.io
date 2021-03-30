@@ -27,6 +27,11 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         /* Adding a dot between )[ and ](. They are too close together. No need to run this one twice. */
         .replace(/([\]\)])([\[\(])/gm, "$1‧$2")
 
+        /*  Octave bracket conversions.  */  
+        .replace(/\(/gm, ")")
+        .replace(/\[/gm, "(")
+        .replace(/\]/gm, "(")
+
         /* Letters to numbers. */
 
         .replace(/Z/gm, "(1(")
@@ -55,35 +60,34 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
 
         /*  Numbers to PS4 symbols.  */  
         
-        .replace(/1(?=[^\[]*\])/gm, "←")
+/*         .replace(/1(?=[^\[]*\])/gm, "←")
         .replace(/2(?=[^\[]*\])/gm, "↑")
         .replace(/3(?=[^\[]*\])/gm, "→")
         .replace(/4(?=[^\[]*\])/gm, "↓")
         .replace(/5(?=[^\[]*\])/gm, "▢")
         .replace(/6(?=[^\[]*\])/gm, "△")
-        .replace(/7(?=[^\[]*\])/gm, "O")
-        .replace(/8(?=[^\[]*\])/gm, "<<<<←>>>>")
+        .replace(/7(?=[^\[]*\])/gm, "O") */
+            .replace(/8(?=[(^\n]*\()/gm, "(←(")     
+           .replace(/8(?=[^[^\(]*\((?=[^\(]*(?:\([^\(]*\()*[^\(]*$).*$)/gm, "(←(")   
+           .replace(/\(\(/gm, "")           
         
-        .replace(/1(?=[^\(]*\))/gm, "←")
+/*         .replace(/1(?=[^\(]*\))/gm, "←")
         .replace(/2(?=[^\(]*\))/gm, "↑")
         .replace(/3(?=[^\(]*\))/gm, "→")
         .replace(/4(?=[^\(]*\))/gm, "↓")      
         .replace(/5(?=[^\(]*\))/gm, "▢")
         .replace(/6(?=[^\(]*\))/gm, "△")
         .replace(/7(?=[^\(]*\))/gm, "O")            
-        .replace(/8(?=[^\(]*\))/gm, "?")    
+        .replace(/8(?=[^\(]*\))/gm, "?")      */
         
-        .replace(/1/gm, "←")       
+         .replace(/1/gm, "←")       
         .replace(/2/gm, "↑") 
         .replace(/3/gm, "→")  
         .replace(/4/gm, "↓")  
         .replace(/5/gm, "▢")       
         .replace(/6/gm, "△") 
-        .replace(/7/gm, "O")  
-        .replace(/8/gm, ")←)")  
-
-        .replace(/<<<<←>>>>/gm, "(←(")
-        
+        .replace(/7/gm, "O")   
+/*         .replace(/8/gm, ")←)")   */         
         
         /*  Specific fixes.  */
         /*  Removes all octave brackets.  */
@@ -120,10 +124,11 @@ document.getElementById("genshin").value = document.getElementById("gw2").value
         .replace(/\)([^A-Z\d\[\]\(\)\/←↑→↓▢△O]+)\)/gm, "$1")
 
         /*  Turns (‧( into ‧  */
-        .replace(/\(([^A-Z\d\[\]\(\)\/←↑→↓▢△O]+)\(/gm, "$1")
+        .replace(/\(‧\(/gm, "‧")
+        .replace(/\)‧\)/gm, "‧")        
 
         /*  Turns single spaces between symbols into double spaces  */
-            .replace(/([\)\]←↑→↓▢△O])([ \t]+)([\)\]←↑→↓▢△O])/gm, "$1$2  $3")
+            .replace(/([\)\]←↑→↓▢△O])([ \t]+)([\)\]←↑→↓▢△O])/gm, "$1$2  $3")  
 
         /* Turns ]] into ]. */
 /*         .replace(/\]\]/gm, "]")         */
